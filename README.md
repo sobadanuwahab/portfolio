@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&size=24&pause=1000&color=2563EB&center=true&vCenter=true&width=600&lines=Frontend+%26+Backend+Developer;Build+Clean+%26+Scalable+Web+Apps;React+%7C+API+%7C+System+Integration" />
+</p>
 
-## Getting Started
+---
 
-First, run the development server:
+## 👋 Hi, I'm Sobadanu Wahab
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+💻 **Frontend & Backend Developer**  
+🚀 Fokus membangun web application yang **clean, scalable, dan maintainable**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🔗 Terbiasa integrasi REST API
+- 🎨 Strong di UI implementation
+- ⚙️ Paham alur frontend ↔ backend
+- 🌱 Terus upgrade skill & best practice
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🛠 Tech Stack
 
-## Learn More
+### Frontend
+![React](https://img.shields.io/badge/React-0A0A0A?style=for-the-badge&logo=react)
+![Vite](https://img.shields.io/badge/Vite-0A0A0A?style=for-the-badge&logo=vite)
+![Tailwind](https://img.shields.io/badge/Tailwind-0A0A0A?style=for-the-badge&logo=tailwindcss)
 
-To learn more about Next.js, take a look at the following resources:
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-0A0A0A?style=for-the-badge&logo=node.js)
+![Express](https://img.shields.io/badge/Express-0A0A0A?style=for-the-badge&logo=express)
+![API](https://img.shields.io/badge/REST_API-0A0A0A?style=for-the-badge)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Tools
+![Git](https://img.shields.io/badge/Git-0A0A0A?style=for-the-badge&logo=git)
+![GitHub](https://img.shields.io/badge/GitHub-0A0A0A?style=for-the-badge&logo=github)
+![Vercel](https://img.shields.io/badge/Vercel-0A0A0A?style=for-the-badge&logo=vercel)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📌 Featured Projects
+🔹 **Event Management Platform**  
+Frontend React + API Integration  
+🌐 Demo: coming soon
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔹 **Admin Dashboard**  
+Role-based access & CRUD system
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+(👉 nanti kita rapikan setelah repo kamu dipilih)
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=sobadanuwahab&show_icons=true&theme=default&hide_border=true" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=sobadanuwahab&hide_border=true" />
+</p>
+
+---
+
+## 📫 Let's Connect
+- 💼 LinkedIn: (isi nanti)
+- 🌐 Portfolio: (kalau ada)
+- 📧 Email: (opsional)
