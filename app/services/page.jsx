@@ -6,30 +6,30 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Development",
+    title: "Website Development",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, hic.",
+      "Creation of modern, responsive websites tailored to personal and business needs.",
     href: "",
   },
   {
     num: "02",
-    title: "UI/UX Design",
+    title: "Web Apllication",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, hic.",
+      "Development of web-based applications such as admin dashboards, reporting systems, and data management systems.",
     href: "",
   },
   {
     num: "03",
-    title: "Logo Design",
+    title: "Forntend Development",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, hic.",
+      "Building an interface using React with a clean and user-friendly design.",
     href: "",
   },
   {
     num: "04",
-    title: "PLC",
+    title: "Backend Development",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, hic.",
+      "API and backend system development using Laravel / Node.js with a neat and secure structure.",
     href: "",
   },
 ];
@@ -46,14 +46,12 @@ const Services = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
-        >
+          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]">
           {services.map((service, index) => {
             return (
               <div
                 key={index}
-                className="flex-1 flex flex-col justify-center gap-6 group"
-              >
+                className="flex-1 flex flex-col justify-center gap-6 group">
                 {/* top */}
                 <div className="w-full flex justify-between items-center">
                   <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
@@ -61,8 +59,7 @@ const Services = () => {
                   </div>
                   <Link
                     href={service.href}
-                    className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
-                  >
+                    className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45">
                     <BsArrowDownRight className="text-primary text-3xl" />
                   </Link>
                 </div>
