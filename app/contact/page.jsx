@@ -254,14 +254,6 @@ const Contact = () => {
                     title="Jakarta Location Map"
                   />
 
-                  {/* Map Overlay - Jakarta Badge */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <Badge className="bg-accent/90 text-white border-none backdrop-blur-sm px-4 py-2">
-                      <FaMapMarkerAlt className="mr-2" />
-                      Jakarta, Indonesia
-                    </Badge>
-                  </div>
-
                   {/* Hover Effect Overlay */}
                   <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
@@ -271,7 +263,7 @@ const Contact = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-white/60 text-sm">
                       <FaMapMarkerAlt className="text-accent" />
-                      <span>Based in Jakarta, available worldwide</span>
+                      <span>Based in Tangerang, available worldwide</span>
                     </div>
                     <Link
                       href="https://www.openstreetmap.org/?mlat=-6.1917&mlon=106.8400#map=12/-6.1917/106.8400"

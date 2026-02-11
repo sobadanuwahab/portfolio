@@ -5,11 +5,11 @@ import CountUp from "react-countup";
 
 const stats = [
   {
-    num: 4,
+    num: 3,
     text: "Years of experience",
   },
   {
-    num: 26,
+    num: 7,
     text: "Projects completed",
   },
   {
@@ -17,7 +17,7 @@ const stats = [
     text: "Technologies mastered",
   },
   {
-    num: 120,
+    num: 55,
     text: "Code commits",
   },
 ];
@@ -31,7 +31,8 @@ const Stats = () => {
             return (
               <div
                 className="flex-1 flex gap-4 items-center justify-center xl:justify-start"
-                key={index}>
+                key={index}
+              >
                 <CountUp
                   end={item.num}
                   duration={5}
@@ -41,7 +42,8 @@ const Stats = () => {
                 <p
                   className={`${
                     item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-                  } leading-snug text-white/80`}>
+                  } leading-snug text-white/80`}
+                >
                   {item.text}
                 </p>
               </div>
