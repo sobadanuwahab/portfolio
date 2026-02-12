@@ -84,7 +84,7 @@ const projects = [
       { name: "Wishlist", icon: <BsFillLightningFill /> },
       { name: "Responsive", icon: <FaPalette /> },
     ],
-    image: "/assets/work/thumb1.png",
+    image: "/assets/work/thumb4.png",
     live: "https://example.com",
     github: "https://github.com",
   },
