@@ -64,7 +64,7 @@ const projects = [
     category: "frontend",
     title: "E-Commerce Platform",
     description:
-      "Modern e-commerce website with product filtering, cart management, and responsive design. Built with React and Redux for state management.",
+      "Development for digital competition platforms focused on performance, usability, and modern user experience.",
     fullDescription: [
       "A fully responsive e-commerce platform with product catalog, shopping cart, and checkout flow.",
       "Implemented advanced filtering, search functionality, and wishlist features for optimal user experience.",
@@ -85,7 +85,7 @@ const projects = [
       { name: "Responsive", icon: <FaPalette /> },
     ],
     image: "/assets/work/thumb4.PNG",
-    live: "https://example.com",
+    live: "https://bariskreasi.com",
     github: "https://github.com",
   },
   {
