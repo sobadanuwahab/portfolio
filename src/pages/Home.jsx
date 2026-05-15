@@ -1,12 +1,9 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 
-// components
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
@@ -17,7 +14,7 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.6, ease: "easeOut" },
+        transition: { delay: 1.4, duration: 0.6, ease: "easeOut" },
       }}
       className="min-h-[80vh] flex flex-col justify-center py-16 xl:py-20 relative overflow-hidden"
     >
@@ -30,14 +27,14 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.5, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 1.5, duration: 0.6, ease: "easeOut" }}
             className="flex-1 text-center xl:text-left order-2 xl:order-none"
           >
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 2.55, duration: 0.4 }}
+              transition={{ delay: 1.55, duration: 0.4 }}
               className="flex justify-center xl:justify-start mb-4"
             >
               <Badge
@@ -56,7 +53,7 @@ const Home = () => {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.6, duration: 0.5 }}
+              transition={{ delay: 1.6, duration: 0.5 }}
               className="h1 mb-4 xl:mb-6"
             >
               <span className="text-white/60 text-xl xl:text-2xl font-normal block mb-2">
@@ -69,7 +66,7 @@ const Home = () => {
                   <motion.span
                     initial={{ width: 0 }}
                     animate={{ width: "100%" }}
-                    transition={{ delay: 2.8, duration: 0.8, ease: "easeOut" }}
+                    transition={{ delay: 1.8, duration: 0.8, ease: "easeOut" }}
                     className="absolute bottom-0 left-0 h-[3px] bg-accent/50 rounded-full"
                   />
                 </span>
@@ -80,7 +77,7 @@ const Home = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.65, duration: 0.5 }}
+              transition={{ delay: 1.65, duration: 0.5 }}
               className="max-w-[600px] mx-auto xl:mx-0 mb-8 xl:mb-9 text-white/70 leading-relaxed text-justify xl:text-left"
             >
               I excel at crafting elegant digital experiences and I am
@@ -93,10 +90,10 @@ const Home = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.7, duration: 0.5 }}
+              transition={{ delay: 1.7, duration: 0.5 }}
               className="flex flex-col xl:flex-row items-center gap-6 xl:gap-8"
             >
-              <Link href="/contact" className="w-full xl:w-auto">
+              <Link to="/contact" className="w-full xl:w-auto">
                 <Button
                   size="lg"
                   className="group relative w-full xl:w-auto bg-accent hover:bg-accent/90 text-primary font-medium px-8 py-6 rounded-lg transition-all duration-300 overflow-hidden"
@@ -132,7 +129,7 @@ const Home = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 2.8, duration: 0.5 }}
+              transition={{ delay: 1.8, duration: 0.5 }}
               className="flex items-center gap-6 mt-10 justify-center xl:justify-start"
             >
               <div className="flex items-center gap-3">
@@ -171,16 +168,13 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2.5, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 1.5, duration: 0.6, ease: "easeOut" }}
             className="flex-1 flex justify-center xl:justify-end order-1 xl:order-none"
           >
             <div className="relative">
-              {/* Decorative elements */}
               <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 via-accent/10 to-transparent rounded-full blur-3xl opacity-50" />
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
-
-              {/* Photo component */}
               <Photo />
             </div>
           </motion.div>
@@ -191,25 +185,10 @@ const Home = () => {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.9, duration: 0.6, ease: "easeOut" }}
+        transition={{ delay: 1.9, duration: 0.6, ease: "easeOut" }}
         className="w-full mt-12 xl:mt-16"
       >
         <Stats />
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 3.0, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden xl:block"
-      >
-        {/* <div className="flex flex-col items-center gap-2">
-          <span className="text-white/40 text-xs uppercase tracking-wider">
-            Scroll
-          </span>
-          <div className="w-px h-12 bg-gradient-to-b from-accent/50 to-transparent" />
-        </div> */}
       </motion.div>
     </motion.section>
   );

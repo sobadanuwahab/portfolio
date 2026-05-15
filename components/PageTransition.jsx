@@ -1,10 +1,8 @@
-"use client";
-
 import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { useLocation } from "react-router-dom";
 
 const PageTransition = ({ children }) => {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   return (
     <AnimatePresence>
       <div key={pathname}>

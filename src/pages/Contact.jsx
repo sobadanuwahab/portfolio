@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -14,14 +12,12 @@ import {
   FaSkype,
 } from "react-icons/fa";
 import { BsFillLightningFill } from "react-icons/bs";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-// Contact info data
 const contactInfo = [
   {
     icon: <FaMapMarkerAlt className="text-2xl" />,
@@ -64,22 +60,14 @@ const contactInfo = [
   },
 ];
 
-// Embed URL for Jakarta map (using OpenStreetMap)
 const mapEmbedUrl =
   "https://www.openstreetmap.org/export/embed.html?bbox=106.80000305175781%2C-6.211544410516488%2C106.88000106811525%2C-6.1713888888888895&amp;layer=mapnik&amp;marker=-6.191666666666667%2C106.84000000000003";
-
-// Static map image fallback (using OpenStreetMap static map)
-const mapImageUrl =
-  "https://staticmap.openstreetmap.de/staticmap.php?center=-6.1917,106.8400&zoom=12&size=600x400&maptype=mapnik&markers=-6.1917,106.8400,lightblue1";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
-    },
+    transition: { staggerChildren: 0.1, delayChildren: 0.3 },
   },
 };
 
@@ -88,10 +76,7 @@ const itemVariants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-    },
+    transition: { type: "spring", stiffness: 100 },
   },
 };
 
@@ -113,13 +98,9 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-
-      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({ name: "", email: "", subject: "", message: "" });
@@ -132,25 +113,24 @@ const Contact = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.6, ease: "easeOut" },
+        transition: { delay: 1.4, duration: 0.6, ease: "easeOut" },
       }}
       className="min-h-[80vh] flex flex-col justify-center py-16 xl:py-20 relative overflow-hidden"
     >
-      {/* Background Gradient Effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent opacity-30" />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header Section */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.5, duration: 0.5, ease: "easeOut" }}
+          transition={{ delay: 1.5, duration: 0.5, ease: "easeOut" }}
           className="text-center xl:text-left mb-12 xl:mb-16 space-y-4"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2.55, duration: 0.4 }}
+            transition={{ delay: 1.55, duration: 0.4 }}
           >
             <Badge
               variant="outline"
@@ -163,7 +143,7 @@ const Contact = () => {
           <motion.h2
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.6, duration: 0.5 }}
+            transition={{ delay: 1.6, duration: 0.5 }}
             className="text-3xl xl:text-4xl font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent"
           >
             Contact Me
@@ -172,7 +152,7 @@ const Contact = () => {
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.65, duration: 0.5 }}
+            transition={{ delay: 1.65, duration: 0.5 }}
             className="text-white/60 max-w-2xl mx-auto xl:mx-0 text-justify xl:text-left leading-relaxed"
           >
             Have a project in mind or want to collaborate? Feel free to reach
@@ -183,14 +163,13 @@ const Contact = () => {
 
         {/* Main Content */}
         <div className="flex flex-col xl:flex-row gap-8 xl:gap-[60px]">
-          {/* Left Column - Contact Info & Map */}
+          {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.7, duration: 0.6 }}
+            transition={{ delay: 1.7, duration: 0.6 }}
             className="w-full xl:w-[45%] space-y-6"
           >
-            {/* Contact Info Cards */}
             <Card className="bg-gradient-to-br from-[#232329] to-[#1A1A1F] border-none">
               <CardContent className="p-6 xl:p-8">
                 <h3 className="text-xl xl:text-2xl font-bold text-white mb-6 flex items-center gap-2">
@@ -219,12 +198,12 @@ const Contact = () => {
                           {info.label}
                         </p>
                         {info.href ? (
-                          <Link
+                          <a
                             href={info.href}
                             className="text-white font-medium text-sm xl:text-base hover:text-accent transition-colors duration-300 truncate block"
                           >
                             {info.value}
-                          </Link>
+                          </a>
                         ) : (
                           <p className="text-white font-medium text-sm xl:text-base truncate">
                             {info.value}
@@ -240,11 +219,10 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Map Location */}
+            {/* Map */}
             <Card className="bg-gradient-to-br from-[#232329] to-[#1A1A1F] border-none overflow-hidden group">
               <CardContent className="p-0 relative">
                 <div className="relative h-[300px] xl:h-[350px] w-full overflow-hidden">
-                  {/* Map iframe */}
                   <iframe
                     src={mapEmbedUrl}
                     className="absolute inset-0 w-full h-full border-0 filter grayscale hover:grayscale-0 transition-all duration-700"
@@ -253,37 +231,34 @@ const Contact = () => {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Jakarta Location Map"
                   />
-
-                  {/* Hover Effect Overlay */}
                   <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
-
-                {/* Map Footer */}
                 <div className="p-4 border-t border-white/10 bg-white/5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-white/60 text-sm">
                       <FaMapMarkerAlt className="text-accent" />
                       <span>Based in Tangerang, available worldwide</span>
                     </div>
-                    <Link
+                    <a
                       href="https://www.openstreetmap.org/?mlat=-6.1917&mlon=106.8400#map=12/-6.1917/106.8400"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="text-accent hover:text-accent/80 text-sm flex items-center gap-1 transition-colors duration-300"
                     >
                       View Larger Map
                       <span className="text-xs">↗</span>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Right Column - Contact Form */}
+          {/* Right Column - Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.7, duration: 0.6 }}
+            transition={{ delay: 1.7, duration: 0.6 }}
             className="w-full xl:w-[55%]"
           >
             <Card className="bg-gradient-to-br from-[#232329] to-[#1A1A1F] border-none h-full">
@@ -293,8 +268,6 @@ const Contact = () => {
                     <FaPaperPlane className="text-accent" />
                     Send Me a Message
                   </h3>
-
-                  {/* Availability Status */}
                   <div className="flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
@@ -306,7 +279,6 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Success Message */}
                 {isSubmitted && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
@@ -321,7 +293,6 @@ const Contact = () => {
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  {/* Name & Email Row */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <label className="text-white/60 text-sm flex items-center gap-2">
@@ -338,7 +309,6 @@ const Contact = () => {
                         className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-accent focus:ring-accent/20 transition-all duration-300"
                       />
                     </div>
-
                     <div className="space-y-2">
                       <label className="text-white/60 text-sm flex items-center gap-2">
                         <FaEnvelope className="text-accent" />
@@ -356,7 +326,6 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  {/* Subject */}
                   <div className="space-y-2">
                     <label className="text-white/60 text-sm flex items-center gap-2">
                       <FaPaperPlane className="text-accent" />
@@ -373,7 +342,6 @@ const Contact = () => {
                     />
                   </div>
 
-                  {/* Message */}
                   <div className="space-y-2">
                     <label className="text-white/60 text-sm flex items-center gap-2">
                       <FaClock className="text-accent" />
@@ -390,12 +358,10 @@ const Contact = () => {
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <div className="flex items-center justify-between pt-2">
                     <p className="text-white/40 text-xs">
                       * I usually respond within 24 hours
                     </p>
-
                     <Button
                       type="submit"
                       disabled={isSubmitting}
@@ -419,36 +385,34 @@ const Contact = () => {
                   </div>
                 </form>
 
-                {/* Additional Contact Options */}
                 <div className="mt-8 pt-6 border-t border-white/10">
                   <div className="flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
                       <span className="text-white/40 text-sm">
                         Quick connect:
                       </span>
-                      <Link
+                      <a
                         href="mailto:sdanuw@gmail.com"
                         className="text-white/60 hover:text-accent transition-colors duration-300 text-sm flex items-center gap-1"
                       >
                         <FaEnvelope className="text-xs" />
                         Email
-                      </Link>
-                      <Link
+                      </a>
+                      <a
                         href="tel:+6281314333352"
                         className="text-white/60 hover:text-accent transition-colors duration-300 text-sm flex items-center gap-1"
                       >
                         <FaPhone className="text-xs" />
                         Call
-                      </Link>
-                      <Link
+                      </a>
+                      <a
                         href="skype:danu.14?chat"
                         className="text-white/60 hover:text-accent transition-colors duration-300 text-sm flex items-center gap-1"
                       >
                         <FaSkype className="text-xs" />
                         Skype
-                      </Link>
+                      </a>
                     </div>
-
                     <Badge
                       variant="outline"
                       className="border-accent/30 text-accent/80"

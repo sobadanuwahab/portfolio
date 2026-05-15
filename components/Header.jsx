@@ -1,7 +1,5 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-
-// components
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
 
@@ -10,7 +8,7 @@ const Header = () => {
     <header className="py-8 xl:py-12 text-white">
       <div className="container mx-auto flex justify-between items-center">
         {/* logo */}
-        <Link href="/">
+        <Link to="/">
           <h1 className="text-4xl font-semibold">
             Sodawa<span className="text-accent">.</span>
           </h1>
@@ -19,7 +17,7 @@ const Header = () => {
         {/* desktop nav & hire me button */}
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/contact">
+          <Link to="/contact">
             <Button>Hire me</Button>
           </Link>
         </div>

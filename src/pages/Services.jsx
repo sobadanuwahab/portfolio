@@ -1,5 +1,3 @@
-"use client";
-
 import { BsArrowUpRight } from "react-icons/bs";
 import {
   HiOutlineDesktopComputer,
@@ -7,7 +5,7 @@ import {
   HiOutlineCode,
   HiOutlineServer,
 } from "react-icons/hi";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -87,7 +85,6 @@ const itemVariants = {
   },
 };
 
-// Component untuk menampilkan description dengan format yang rapi
 const Description = ({ paragraphs }) => (
   <div className="space-y-4 max-w-[700px] mx-auto xl:mx-0">
     {paragraphs.map((paragraph, index) => (
@@ -121,11 +118,10 @@ const Services = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.6, ease: "easeOut" },
+        transition: { delay: 1.4, duration: 0.6, ease: "easeOut" },
       }}
       className="min-h-[80vh] flex flex-col justify-center py-16 xl:py-20 relative overflow-hidden"
     >
-      {/* Background Gradient Effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent opacity-30" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -133,13 +129,13 @@ const Services = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.5, duration: 0.5, ease: "easeOut" }}
+          transition={{ delay: 1.5, duration: 0.5, ease: "easeOut" }}
           className="text-center xl:text-left mb-12 xl:mb-16 space-y-4"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2.55, duration: 0.4 }}
+            transition={{ delay: 1.55, duration: 0.4 }}
           >
             <Badge
               variant="outline"
@@ -152,7 +148,7 @@ const Services = () => {
           <motion.h2
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.6, duration: 0.5 }}
+            transition={{ delay: 1.6, duration: 0.5 }}
             className="text-3xl xl:text-4xl font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent"
           >
             My Services
@@ -181,7 +177,6 @@ const Services = () => {
               whileHover={{ scale: 1.02 }}
               className="group relative h-full"
             >
-              {/* Gradient Background on Hover */}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
@@ -191,7 +186,6 @@ const Services = () => {
 
               <Card className="relative h-full bg-gradient-to-br from-[#232329] to-[#1A1A1F] border-none hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 overflow-hidden">
                 <CardContent className="p-6 xl:p-8 flex flex-col h-full">
-                  {/* Header with Number and Icon */}
                   <div className="flex justify-between items-start mb-4 xl:mb-6">
                     <div className="flex items-center gap-3 xl:gap-4">
                       <span className="text-4xl xl:text-6xl font-black bg-gradient-to-r from-white/20 to-white/5 bg-clip-text text-transparent group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-300">
@@ -202,20 +196,18 @@ const Services = () => {
                       </div>
                     </div>
 
-                    <Link
+                    <a
                       href={service.href || "#"}
                       className="w-10 h-10 xl:w-14 xl:h-14 rounded-full bg-white/5 group-hover:bg-accent transition-all duration-300 flex justify-center items-center hover:rotate-45"
                     >
                       <BsArrowUpRight className="text-white group-hover:text-primary text-lg xl:text-2xl" />
-                    </Link>
+                    </a>
                   </div>
 
-                  {/* Title */}
                   <h3 className="text-xl xl:text-2xl font-bold text-white mb-3 xl:mb-4 group-hover:text-accent transition-colors duration-300">
                     {service.title}
                   </h3>
 
-                  {/* Description */}
                   <div className="space-y-2 mb-4 xl:mb-6 flex-grow">
                     {service.description.map((paragraph, i) => (
                       <motion.p
@@ -223,7 +215,7 @@ const Services = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{
-                          delay: 2.7 + index * 0.1 + i * 0.1,
+                          delay: i * 0.08,
                           duration: 0.5,
                         }}
                         className="text-white/60 leading-relaxed text-justify xl:text-left text-xs xl:text-sm"
@@ -236,7 +228,6 @@ const Services = () => {
                     ))}
                   </div>
 
-                  {/* Technologies */}
                   <div className="mt-auto">
                     <div className="flex flex-wrap gap-1.5 xl:gap-2 mb-3 xl:mb-4">
                       {service.technologies.map((tech, i) => (
@@ -245,7 +236,7 @@ const Services = () => {
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{
-                            delay: 2.8 + index * 0.1 + i * 0.05,
+                            delay: i * 0.04,
                             duration: 0.4,
                           }}
                         >
@@ -259,7 +250,6 @@ const Services = () => {
                       ))}
                     </div>
 
-                    {/* Animated Border */}
                     <motion.div
                       className="h-[1px] xl:h-[2px] bg-gradient-to-r from-accent to-transparent"
                       initial={{ width: 0 }}
@@ -269,7 +259,6 @@ const Services = () => {
                   </div>
                 </CardContent>
 
-                {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 w-24 h-24 xl:w-32 xl:h-32 bg-accent/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 w-32 h-32 xl:w-40 xl:h-40 bg-white/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
@@ -281,7 +270,7 @@ const Services = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.8, duration: 0.6, ease: "easeOut" }}
+          transition={{ delay: 1.8, duration: 0.6, ease: "easeOut" }}
           className="mt-16 xl:mt-20 text-center"
         >
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-6 sm:p-8 bg-gradient-to-br from-[#232329] to-[#1A1A1F] rounded-2xl border border-white/10 hover:border-accent/30 transition-all duration-300">
@@ -295,7 +284,7 @@ const Services = () => {
               </span>
             </div>
             <Link
-              href="/contact"
+              to="/contact"
               className="group px-6 py-2 bg-accent text-primary rounded-lg font-medium hover:bg-accent/90 transition-all duration-300 hover:scale-105 text-sm xl:text-base flex items-center gap-2"
             >
               Start a Project

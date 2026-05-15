@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 
@@ -9,7 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import {
-  BsArrowUpRight,
   BsGithub,
   BsCodeSlash,
   BsFillLightningFill,
@@ -18,17 +15,12 @@ import { FiExternalLink } from "react-icons/fi";
 import {
   FaReact,
   FaNodeJs,
-  FaDatabase,
   FaChartBar,
   FaShoppingCart,
-  FaTasks,
-  FaCloud,
   FaUsers,
   FaFileAlt,
   FaPalette,
-  FaServer,
   FaCube,
-  FaPlug,
   FaCalendarAlt,
   FaDownload,
   FaChartLine,
@@ -42,7 +34,6 @@ import {
   SiMongodb,
   SiSocketdotio,
   SiChartdotjs,
-  SiExpress,
 } from "react-icons/si";
 
 import {
@@ -54,15 +45,13 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-import Link from "next/link";
-import Image from "next/image";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
   {
     num: "01",
     category: "frontend",
-    title: "E-Commerce Platform",
+    title: "Digital Competition Platform",
     description:
       "Development for digital competition platforms focused on performance, usability, and modern user experience.",
     fullDescription: [
@@ -72,10 +61,7 @@ const projects = [
     stack: [
       { name: "React", icon: <FaReact className="text-blue-400" /> },
       { name: "Redux", icon: <SiRedux className="text-purple-400" /> },
-      {
-        name: "TailwindCSS",
-        icon: <SiTailwindcss className="text-cyan-400" />,
-      },
+      { name: "TailwindCSS", icon: <SiTailwindcss className="text-cyan-400" /> },
       { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
     ],
     features: [
@@ -100,10 +86,7 @@ const projects = [
     ],
     stack: [
       { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-      {
-        name: "TailwindCSS",
-        icon: <SiTailwindcss className="text-cyan-400" />,
-      },
+      { name: "TailwindCSS", icon: <SiTailwindcss className="text-cyan-400" /> },
       { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
       { name: "Socket.io", icon: <SiSocketdotio className="text-white" /> },
@@ -131,10 +114,7 @@ const projects = [
     stack: [
       { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
       { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
-      {
-        name: "TailwindCSS",
-        icon: <SiTailwindcss className="text-cyan-400" />,
-      },
+      { name: "TailwindCSS", icon: <SiTailwindcss className="text-cyan-400" /> },
       { name: "Chart.js", icon: <SiChartdotjs className="text-pink-500" /> },
     ],
     features: [
@@ -148,29 +128,6 @@ const projects = [
     github: "https://github.com",
   },
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-    },
-  },
-};
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
@@ -186,38 +143,30 @@ const Work = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.6, ease: "easeOut" },
+        transition: { delay: 1.4, duration: 0.6, ease: "easeOut" },
       }}
       className="min-h-[80vh] flex flex-col justify-center py-16 xl:py-20 relative overflow-hidden"
     >
-      {/* Background Gradient Effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent opacity-30" />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header Section */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.5, duration: 0.5, ease: "easeOut" }}
+          transition={{ delay: 1.5, duration: 0.5, ease: "easeOut" }}
           className="text-center xl:text-left mb-12 xl:mb-16 space-y-4"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2.55, duration: 0.4 }}
-          >
-            {/* <Badge
-              variant="outline"
-              className="px-4 py-2 text-accent border-accent/30 bg-accent/10 hover:bg-accent/20 transition-all duration-300"
-            >
-              My Portfolio
-            </Badge> */}
-          </motion.div>
+            transition={{ delay: 1.55, duration: 0.4 }}
+          />
 
           <motion.h2
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.6, duration: 0.5 }}
+            transition={{ delay: 1.6, duration: 0.5 }}
             className="text-3xl xl:text-4xl font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent"
           >
             Featured Projects
@@ -226,7 +175,7 @@ const Work = () => {
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.65, duration: 0.5 }}
+            transition={{ delay: 1.65, duration: 0.5 }}
             className="text-white/60 max-w-2xl mx-auto xl:mx-0 text-justify xl:text-left leading-relaxed"
           >
             Explore my latest work showcasing modern web development techniques,
@@ -236,16 +185,15 @@ const Work = () => {
 
         {/* Main Content */}
         <div className="flex flex-col xl:flex-row xl:gap-[60px]">
-          {/* Project Info Section - Kiri */}
+          {/* Project Info - Left */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.7, duration: 0.6 }}
+            transition={{ delay: 1.7, duration: 0.6 }}
             className="w-full xl:w-[45%] flex flex-col order-2 xl:order-none"
           >
             <Card className="bg-gradient-to-br from-[#232329] to-[#1A1A1F] border-none h-full">
               <CardContent className="p-6 xl:p-8 flex flex-col h-full">
-                {/* Project Number with Gradient */}
                 <div className="flex items-center gap-4 mb-6">
                   <span className="text-6xl xl:text-7xl font-black bg-gradient-to-r from-white/20 to-white/5 bg-clip-text text-transparent">
                     {project.num}
@@ -253,7 +201,6 @@ const Work = () => {
                   <div className="h-[2px] flex-1 bg-gradient-to-r from-accent/50 to-transparent" />
                 </div>
 
-                {/* Category Badge */}
                 <Badge
                   variant="outline"
                   className="w-fit px-4 py-2 mb-4 text-accent border-accent/30 bg-accent/10 capitalize flex items-center gap-2"
@@ -262,23 +209,19 @@ const Work = () => {
                   {project.category} Project
                 </Badge>
 
-                {/* Title */}
                 <h3 className="text-2xl xl:text-3xl font-bold text-white mb-4 group-hover:text-accent transition-colors duration-300">
                   {project.title}
                 </h3>
 
-                {/* Description */}
                 <div className="space-y-3 mb-6">
                   {project.fullDescription.map((desc, index) => (
                     <motion.p
                       key={index}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 2.8 + index * 0.1, duration: 0.5 }}
+                      transition={{ delay: index * 0.1, duration: 0.5 }}
                       className="text-white/60 leading-relaxed text-justify xl:text-left text-sm"
-                      style={{
-                        textJustify: "inter-word",
-                      }}
+                      style={{ textJustify: "inter-word" }}
                     >
                       {desc}
                     </motion.p>
@@ -297,10 +240,7 @@ const Work = () => {
                         key={index}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                          delay: 2.9 + index * 0.05,
-                          duration: 0.4,
-                        }}
+                        transition={{ delay: 0.05 + index * 0.05, duration: 0.4 }}
                       >
                         <Badge
                           variant="secondary"
@@ -314,24 +254,21 @@ const Work = () => {
                   </div>
                 </div>
 
-                {/* Technologies Used */}
+                {/* Technologies */}
                 <div className="mb-6">
                   <h4 className="text-white/80 font-semibold mb-3 text-sm uppercase tracking-wider flex items-center gap-2">
                     <FaCube className="text-accent" />
                     Technologies Used
                   </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.stack.map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                          delay: 3.0 + index * 0.05,
-                          duration: 0.4,
-                        }}
-                      >
-                        <TooltipProvider delayDuration={100}>
+                  <TooltipProvider delayDuration={100}>
+                    <div className="flex flex-wrap gap-2">
+                      {project.stack.map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
+                        >
                           <Tooltip>
                             <TooltipTrigger asChild>
                               <div className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-accent/20 rounded-lg transition-all duration-300 cursor-help group">
@@ -353,20 +290,22 @@ const Work = () => {
                               </p>
                             </TooltipContent>
                           </Tooltip>
-                        </TooltipProvider>
-                      </motion.div>
-                    ))}
-                  </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </TooltipProvider>
                 </div>
 
-                {/* Border */}
                 <div className="border-t border-white/10 my-6" />
 
                 {/* Action Buttons */}
-                <div className="flex items-center gap-4">
-                  {/* Live Project Button */}
-                  <Link href={project.live} target="_blank">
-                    <TooltipProvider delayDuration={100}>
+                <TooltipProvider delayDuration={100}>
+                  <div className="flex items-center gap-4">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <motion.div
@@ -386,12 +325,13 @@ const Work = () => {
                           <p>Live Demo</p>
                         </TooltipContent>
                       </Tooltip>
-                    </TooltipProvider>
-                  </Link>
+                    </a>
 
-                  {/* GitHub Button */}
-                  <Link href={project.github} target="_blank">
-                    <TooltipProvider delayDuration={100}>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <motion.div
@@ -411,30 +351,28 @@ const Work = () => {
                           <p>View Code</p>
                         </TooltipContent>
                       </Tooltip>
-                    </TooltipProvider>
-                  </Link>
+                    </a>
 
-                  {/* Project Counter */}
-                  <div className="ml-auto flex items-center gap-2 text-white/40">
-                    <span className="text-accent font-bold text-xl">
-                      {project.num}
-                    </span>
-                    <span className="text-white/20">/</span>
-                    <span className="text-white/60">0{projects.length}</span>
+                    <div className="ml-auto flex items-center gap-2 text-white/40">
+                      <span className="text-accent font-bold text-xl">
+                        {project.num}
+                      </span>
+                      <span className="text-white/20">/</span>
+                      <span className="text-white/60">0{projects.length}</span>
+                    </div>
                   </div>
-                </div>
+                </TooltipProvider>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Slider Section - Kanan (Hanya Image) */}
+          {/* Slider - Right */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 2.7, duration: 0.6 }}
+            transition={{ delay: 1.7, duration: 0.6 }}
             className="w-full xl:w-[55%] mb-8 xl:mb-0"
           >
-            {/* No Card, No Background - Just Image */}
             <div className="relative h-full">
               <Swiper
                 spaceBetween={30}
@@ -446,22 +384,17 @@ const Work = () => {
               >
                 {projects.map((project, index) => (
                   <SwiperSlide key={index} className="w-full h-full relative">
-                    {/* Image Container - No Background */}
                     <div className="relative w-full h-full group/slide overflow-hidden rounded-xl">
-                      {/* Image */}
                       <div className="relative w-full h-full">
-                        <Image
+                        <img
                           src={project.image}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover/slide:scale-110"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/slide:scale-110"
                           alt={project.title}
                         />
                       </div>
 
-                      {/* Overlay gradient - muncul saat hover */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover/slide:opacity-100 transition-opacity duration-500 z-10" />
 
-                      {/* Content - muncul saat hover */}
                       <div className="absolute bottom-0 left-0 right-0 p-6 xl:p-8 translate-y-8 opacity-0 group-hover/slide:translate-y-0 group-hover/slide:opacity-100 transition-all duration-500 z-20">
                         <div className="flex items-center gap-2 mb-2">
                           <Badge
@@ -486,7 +419,6 @@ const Work = () => {
                           {project.description}
                         </p>
 
-                        {/* Tech Icons Preview */}
                         <div className="flex items-center gap-2">
                           <div className="flex -space-x-2">
                             {project.stack.slice(0, 3).map((tech, i) => (
@@ -508,7 +440,6 @@ const Work = () => {
                         </div>
                       </div>
 
-                      {/* Hover indicator */}
                       <div className="absolute top-4 right-4 opacity-0 group-hover/slide:opacity-100 transition-opacity duration-500 z-20">
                         <Badge className="bg-accent/80 text-white border-none backdrop-blur-sm">
                           View Project
@@ -518,7 +449,6 @@ const Work = () => {
                   </SwiperSlide>
                 ))}
 
-                {/* Custom Slider Buttons */}
                 <WorkSliderBtns
                   containerStyles="absolute bottom-4 right-4 flex gap-2 z-30"
                   btnStyles="w-10 h-10 xl:w-12 xl:h-12 rounded-full bg-accent/20 hover:bg-accent transition-all duration-300 flex justify-center items-center backdrop-blur-sm"
