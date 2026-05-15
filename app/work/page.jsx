@@ -66,7 +66,7 @@ const projects = [
     description:
       "Development for digital competition platforms focused on performance, usability, and modern user experience.",
     fullDescription: [
-      "A fully responsive e-commerce platform with product catalog, shopping cart, and checkout flow.",
+      "A fully responsive platform with ticketing system, voting functionality, and real-time updates.",
       "Implemented advanced filtering, search functionality, and wishlist features for optimal user experience.",
     ],
     stack: [
